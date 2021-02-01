@@ -1,5 +1,5 @@
 <template>
-  <div class="container ct-example-row">
+  <div class="container ct-example-row ">
     <div class="row">
       <div class="w-100"></div>
       <div class="col img fade-in">
@@ -126,7 +126,8 @@
 
         irAbajo(){
          window.scrollBy(0, window.innerHeight*3);
-
+         console.log(window.innerHeight)
+         
         }
       }
   }
@@ -191,6 +192,10 @@ img {
 @-ms-keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
+}
+
+.bajar{
+
 }
 
 

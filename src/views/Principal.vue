@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <div style="position: relative">
         <base-nav type="primary" effect="dark" expand>
             <a class="navbar-brand" href="#">Juan Carlos Herrera Pro</a>
@@ -16,27 +16,27 @@
 
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
-                    <a  class="nav-link active nav-link-icon" href="#Inicio">
+                    <a v-smooth-scroll  class="nav-link active nav-link-icon" href="#Inicio">
                         Inicio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a  class="nav-link nav-link-icon" href="#Conoce">
+                    <a  v-smooth-scroll class="nav-link nav-link-icon" href="#Conoce">
                         Conóceme
                     </a>
                 </li>
-               <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="#Portafolio">
+               <li  class="nav-item">
+                    <a v-smooth-scroll class="nav-link nav-link-icon" href="#Portafolio">
                         Portafolio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="#Servicios">
+                    <a v-smooth-scroll class="nav-link nav-link-icon" href="#Servicios">
                         Servicios
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="#Contacto">
+                    <a v-smooth-scroll class="nav-link nav-link-icon" href="#Contacto">
                         Contacto
                     </a>
                 </li>
@@ -45,24 +45,26 @@
         </base-nav>
     </div>
 
-        
-    <app-inicio id="Inicio"></app-inicio>
-    <br>
-    <hr style="width:75%;">
-    <app-conoce id="Conoce"></app-conoce>
-    <br>
-    <hr style="width:75%;">
-    <div class="separacion"></div>
-    <app-portafolio id="Portafolio"></app-portafolio>
-    <div class="separacion"></div>
-    <hr style="width:75%;">
-    <div class="separacion"></div>
-    <app-servicios id="Servicios"></app-servicios>
-    <div class="separacion"></div>
-    <hr style="width:75%;">
-    <div class="separacion"></div>
-    <app-contacto id="Contacto"></app-contacto>
-    <app-footer></app-footer>
+    <div class="scroll-container">
+         <app-inicio id="Inicio"></app-inicio>
+        <br id="Conoce">
+        <hr style="width:75%;">
+        <app-conoce ></app-conoce>
+        <br>
+        <hr id="Portafolio"  style="width:75%;">
+        <div class="separacion"></div>
+        <app-portafolio ></app-portafolio>
+        <div class="separacion"></div>
+        <hr id="Servicios" style="width:75%;">
+        <div class="separacion"></div>
+        <app-servicios ></app-servicios>
+        <div class="separacion"></div>
+        <hr style="width:75%;">
+        <div class="separacion"></div>
+        <app-contacto id="Contacto"></app-contacto>
+        <app-footer></app-footer>
+    </div>
+   
         
       
     </div>
@@ -103,6 +105,9 @@ export default {
         margin-bottom: 10vh;
         margin-top: 10vh;
     }
-
+    .scroll-container{
+        
+        scroll-behavior: smooth;
+    }
  
 </style>
