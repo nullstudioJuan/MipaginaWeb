@@ -1,8 +1,8 @@
 <template>
-    <div >
+    <div id="scrollable">
         <div style="position: relative">
-        <base-nav type="primary" effect="dark" expand>
-            <a class="navbar-brand" href="#">Juan Carlos Herrera Pro</a>
+        <base-nav  :transparent=banNav type="primary" effect="dark" title="Juan Carlos Herrera Pro" expand>
+            
 
             <div class="row" slot="content-header" slot-scope="{closeMenu}">
                 <div class="col-6 collapse-brand">
@@ -85,6 +85,25 @@ import closeButton from '../components/CloseButton'
 
 
 export default {
+
+
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll (event) {
+ 
+        if(window.scrollY > 100){
+            this.banNav = false;
+        }else{
+            this.banNav = true;
+        }
+    }
+  },
+
     components:{
         appNav: navBar,
         appInicio: Inicio,
@@ -96,6 +115,13 @@ export default {
          baseDropdown: baseDropdown,
         baseNav: baseNav,
         closeButton: closeButton
+    },
+
+    data(){
+        return{
+            contadorScroll:0,
+            banNav:true
+        }
     }
 }
 </script>
@@ -109,5 +135,7 @@ export default {
         
         scroll-behavior: smooth;
     }
+
+  
  
 </style>

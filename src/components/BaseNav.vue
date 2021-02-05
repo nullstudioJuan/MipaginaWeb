@@ -1,13 +1,13 @@
 <template>
-    <nav class="navbar fixed-top"
+    <nav class="navbar fixed-top "
          :class="[
             {'navbar-expand-lg': expand},
             {[`navbar-${effect}`]: effect},
-            {'navbar-transparent': transparent},
+            {'bg-transparent': transparent},
             {[`bg-${type}`]: type},
             {'rounded': round}
          ]">
-        <div class="container">
+        <div class="container ">
             <slot name="container-pre"></slot>
             <slot name="brand">
                 <a class="navbar-brand" href="#" @click.prevent="onTitleClick">
@@ -35,6 +35,9 @@ import { FadeTransition } from "vue2-transitions";
 import NavbarToggleButton from "./NavbarToggleButton";
 
 export default {
+  
+
+
   name: "base-nav",
   components: {
     FadeTransition,
@@ -48,7 +51,7 @@ export default {
     },
     title: {
       type: String,
-      default: "",
+      default: "Juan Carlos Herrera Pro",
       description: "Title of navbar"
     },
     contentId: {
@@ -93,5 +96,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
+
+
 </style>
