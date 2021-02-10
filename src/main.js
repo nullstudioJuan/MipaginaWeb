@@ -22,10 +22,15 @@ import Argon from "./plugins/argon-kit";
 import './registerServiceWorker'
 import VueSmoothScroll from 'vue2-smooth-scroll'
 
+import SequentialEntrance from 'vue-sequential-entrance'
+import 'vue-sequential-entrance/vue-sequential-entrance.css'
+
 Vue.use(VueSmoothScroll)
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
+
+Vue.use(SequentialEntrance);
 
 new Vue({
   router,

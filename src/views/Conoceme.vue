@@ -1,62 +1,66 @@
 <template>
   <div class="container ct-example-row ">
-    <div class="row">
-      <div class="w-100"></div>
-      <div class="col img fade-in">
-        <img src="https://i.ibb.co/RCcZ8v6/Yoxd.jpg" alt="Yoxd" border="0" />
+    <sequential-entrance fromBottom>
+      <div class="row">
+        <div class="w-100"></div>
+        <div class="col img fade-in">
+          <img src="https://i.ibb.co/RCcZ8v6/Yoxd.jpg" alt="Yoxd" border="0" />
+        </div>
+          
+        <div class="col">
+          <h1>Acerca de mi</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum placeat
+            numquam facere sunt! Molestiae, quo ut magnam esse alias fuga
+            voluptatum quae sint consequatur minus. Est, reprehenderit unde .
+            Magni, odio?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique,
+            totam necessitatibus facilis possimus doloribus blanditiis officia
+            ducimus cupiditate rerumeius eos cumque quibusdam in a modi iste quae
+            inventore non.
+          </p>
+          <progress-bar
+            class="barra"
+            type="default"
+            :value="valorHTML"
+            label="HTML5"
+          ></progress-bar>
+          <progress-bar
+            class="barra"
+            type="default"
+            :value="valorCSS"
+            label="CSS3"
+          ></progress-bar>
+          <progress-bar
+            class="barra"
+            type="default"
+            :value="valorJs"
+            label="Javascript"
+          ></progress-bar>
+          <progress-bar
+            class="barra2"
+            type="default"
+            :value="valorVue"
+            label="VUEJS"
+          ></progress-bar>
+        </div>
+        
       </div>
-      <div class="col">
-        <h1>Acerca de mi</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum placeat
-          numquam facere sunt! Molestiae, quo ut magnam esse alias fuga
-          voluptatum quae sint consequatur minus. Est, reprehenderit unde .
-          Magni, odio?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique,
-          totam necessitatibus facilis possimus doloribus blanditiis officia
-          ducimus cupiditate rerumeius eos cumque quibusdam in a modi iste quae
-          inventore non.
-        </p>
-        <progress-bar
-          class="barra"
-          type="default"
-          :value="valorHTML"
-          label="HTML5"
-        ></progress-bar>
-        <progress-bar
-          class="barra"
-          type="default"
-          :value="valorCSS"
-          label="CSS3"
-        ></progress-bar>
-        <progress-bar
-          class="barra"
-          type="default"
-          :value="valorJs"
-          label="Javascript"
-        ></progress-bar>
-        <progress-bar
-          class="barra2"
-          type="default"
-          :value="valorVue"
-          label="VUEJS"
-        ></progress-bar>
+      <div class="row">
+        <div class="offset-0 col-2">
+          <base-button class="boton" @click="irAbajo()" type="primary"
+            >Contactame</base-button
+          >
+        </div>
+        <div class="offset-3 offset-sm-2 offset-md-1 col-2">
+          <base-button class="botoncv boton" @click="descargar" type="primary"
+            >Descarga mi CV</base-button
+          >
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="offset-0 col-2">
-        <base-button class="boton" @click="irAbajo()" type="primary"
-          >Contactame</base-button
-        >
-      </div>
-      <div class="offset-3 offset-sm-2 offset-md-1 col-2">
-        <base-button class="botoncv boton" @click="descargar" type="primary"
-          >Descarga mi CV</base-button
-        >
-      </div>
-    </div>
+    </sequential-entrance>
   </div>
 </template>
 
@@ -194,9 +198,6 @@ img {
   100% {opacity:1;}
 }
 
-.bajar{
-
-}
 
 
 </style>

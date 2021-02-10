@@ -40,6 +40,11 @@
                         Contacto
                     </a>
                 </li>
+            <!--<li class="nav-item">
+                    <a v-smooth-scroll class="nav-link nav-link-icon" href="">
+                        {{x}} x {{y}} barra: {{z}}
+                    </a>
+                </li> -->
 
             </ul>
         </base-nav>
@@ -49,19 +54,19 @@
          <app-inicio id="Inicio"></app-inicio>
         <br id="Conoce">
         <hr style="width:75%;">
-        <app-conoce ></app-conoce>
+        <app-conoce v-if="banConoceme"></app-conoce>
         <br>
         <hr id="Portafolio"  style="width:75%;">
         <div class="separacion"></div>
-        <app-portafolio ></app-portafolio>
+        <app-portafolio v-if="banPortafolio"></app-portafolio>
         <div class="separacion"></div>
         <hr id="Servicios" style="width:75%;">
         <div class="separacion"></div>
-        <app-servicios ></app-servicios>
+        <app-servicios v-if="banServicios"></app-servicios>
         <div class="separacion"></div>
         <hr style="width:75%;">
         <div class="separacion"></div>
-        <app-contacto id="Contacto"></app-contacto>
+        <app-contacto id="Contacto" v-if="banContactame"></app-contacto>
         <app-footer></app-footer>
     </div>
    
@@ -83,9 +88,11 @@ import baseDropdown from '../components/BaseDropdown'
 import baseNav from '../components/BaseNav'
 import closeButton from '../components/CloseButton'
 
+import VueScreenSize from 'vue-screen-size'
 
 export default {
 
+  mixins: [VueScreenSize.VueScreenSizeMixin],
 
   created () {
     window.addEventListener('scroll', this.handleScroll);
@@ -96,11 +103,31 @@ export default {
   methods: {
     handleScroll (event) {
  
+        /*this.x =this.$vssWidth;
+
+        this.y =this.$vssHeight;
+
+        this.z = window.scrollY;*/
+        
         if(window.scrollY > 100){
             this.banNav = false;
+            this.banConoceme = true;
         }else{
             this.banNav = true;
         }
+
+        if(window.scrollY > (this.$vssHeight*0.9)){
+            this.banPortafolio = true;
+        }
+
+        if(window.scrollY > this.$vssHeight + (this.$vssHeight*0.75)){
+            this.banServicios = true;
+        }
+
+        if(window.scrollY > 2*(this.$vssHeight) + (this.$vssHeight*0.65)){
+            this.banContactame = true;
+        }
+
     }
   },
 
@@ -120,7 +147,14 @@ export default {
     data(){
         return{
             contadorScroll:0,
-            banNav:true
+            banNav:true,
+            y:0,
+            x:0,
+            z:0,
+            banConoceme:false,
+            banPortafolio:false,
+            banServicios:false,
+            banContactame:false
         }
     }
 }

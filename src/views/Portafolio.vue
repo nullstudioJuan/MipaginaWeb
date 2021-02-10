@@ -1,20 +1,21 @@
 <template>
 <div class="container">
-    <div class="row">
-        <div class="col">
-              <h1 class="titulo">Mi Portafolio</h1>
-        </div>
-    </div>
-
-    <div class="row " >
-        <div class="col ">          
-             <img src="https://i.ibb.co/PgGq8Xj/merc.png" alt="Avatar" class="image" style="width:100%">
-            <div class="middle">
-                <div class="text "> <a class="text" target="_blank" rel="noopener noreferrer" href="http://merc-solutions.com/"> Merc-solutions.com </a> </div>
+    <sequential-entrance fromBottom>
+        <div class="row">
+            <div class="col">
+                <h1 class="titulo">Mi Portafolio</h1>
             </div>
         </div>
-    </div>
 
+        <div class="row " >
+            <div class="col ">          
+                <img src="https://i.ibb.co/PgGq8Xj/merc.png" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                    <div class="text "> <a class="text" target="_blank" rel="noopener noreferrer" href="http://merc-solutions.com/"> Merc-solutions.com </a> </div>
+                </div>
+            </div>
+        </div>
+    </sequential-entrance>
 </div>
   
 </template>
