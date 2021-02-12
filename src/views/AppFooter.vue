@@ -23,6 +23,36 @@
             </div>
 
             <hr>
+
+            <div class="text-center">
+                 <!--New footer-->
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                        <p>San Marcos Contla, Tlaxcala</p>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <i class="fas fa-mobile fa-2x"></i>
+                        <p>+52 5565569870</p>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <i class="fas fa-envelope fa-2x"></i>
+                        <p>null.studio@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="social">
+                    <i class="fab fa-instagram fa-2x"></i>
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                    <i class="fab fa-twitter fa-2x"></i>
+                </div>
+
+                <div class="copyright">
+                    <p>Copyright © 2019 NullStudio - All rights reserved.</p>
+                </div>
+            </div>
+           
+            <!--
             <div class="row align-items-center justify-content-md-between">
                 <div class="col-md-6">
                     <div class="copyright">
@@ -37,12 +67,11 @@
                         </li>
                         
                     </ul>
-                    
                 </div>
                 <p>Pagina diseñana y desarrollada por mi, utilizando VueJs y "Argon - Desing System" de  <a href="https://www.creative-tim.com" target="_blank" rel="noopener">Creative Tim</a> & <a href="https://www.binarcode.com" target="_blank" rel="noopener">Binar Code</a></p>
-            
+    
             </div>
-
+            -->
         </div>
     </footer>
 </template>
@@ -57,4 +86,14 @@ export default {
 };
 </script>
 <style>
+    .social{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .social > * {
+        padding: 5%;
+    }
+
 </style>
